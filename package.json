@@ -6,12 +6,22 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "export": "next export",
+    "deploy": "next build && npm run build && gh-pages -d out",
     "lint": "next lint"
   },
+  "homepage": "https://christian-ra.github.io/spidr-challenge",
   "dependencies": {
     "cleave.js": "^1.6.0",
     "next": "15.4.1",
     "react": "19.1.0",
     "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  },
+  "gh-pages": {
+    "branch": "gh-pages",
+    "dotfiles": true
   }
 }
