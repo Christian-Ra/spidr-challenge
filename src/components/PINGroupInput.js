@@ -19,9 +19,9 @@ export default function PINInputGroup({ pinParts, setPinParts }) {
     <div
       style={{
         display: "flex",
-        gap: "0.5rem",
+        gap: "1rem",
         margin: "0.5rem 0",
-        verticalAlign: "center",
+        alignItems: "center",
       }}
     >
       <label style={{ marginBottom: "0.25rem" }}>Super Secret Spidr PIN:</label>
@@ -35,7 +35,7 @@ export default function PINInputGroup({ pinParts, setPinParts }) {
           value={part}
           onChange={(e) => handlePinChange(i, e.target.value)}
           style={{
-            width: "60px",
+            width: "100px",
             textAlign: "center",
             fontSize: "1.0rem",
             padding: "0.5rem",

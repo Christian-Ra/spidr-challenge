@@ -33,6 +33,7 @@ export default function ContactForm() {
 
   return (
     <form
+      className='form-container'
       onSubmit={handleSubmit}
       style={{
         padding: "2rem",
