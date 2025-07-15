@@ -1,11 +1,15 @@
 import { useState } from "react";
 import TextInput from "./TextInput";
+import PhoneInput from "./PhoneInput";
+import PINInputGroup from "./PINGroupInput";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
+    phone: "",
+    pinParts: ["", "", "", ""], // Assuming a 4-part PIN input
   });
 
   const handleChange = (e) => {
@@ -13,10 +17,14 @@ export default function ContactForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  const setPinParts = (newParts) => {
+    setFormData((prev) => ({ ...prev, pinParts: newParts }));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const secretPin = formData.pinParts.join("-");
-    const output = { ...formData, secretPin };
+    const output = { ...formData };
     console.log("Submitted Data:", output);
     alert("Form submitted! Check the console.");
   };
@@ -41,6 +49,12 @@ export default function ContactForm() {
         value={formData.lastName}
         onChange={handleChange}
       />
+      <PhoneInput
+        label='Phone Number'
+        name='phone'
+        value={formData.phone || ""}
+        onChange={handleChange}
+      />
 
       <TextInput
         label='Email'
@@ -49,6 +63,8 @@ export default function ContactForm() {
         value={formData.email}
         onChange={handleChange}
       />
+
+      <PINInputGroup pinParts={formData.pinParts} setPinParts={setPinParts} />
 
       <button
         type='submit'
