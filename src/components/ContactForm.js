@@ -2,6 +2,7 @@ import { useState } from "react";
 import TextInput from "./TextInput";
 import PhoneInput from "./PhoneInput";
 import PINInputGroup from "./PINGroupInput";
+import CurrencyInput from "./CurrencyInput";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -9,6 +10,7 @@ export default function ContactForm() {
     lastName: "",
     email: "",
     phone: "",
+    costGuess: "",
     pinParts: ["", "", "", ""], // Assuming a 4-part PIN input
   });
 
@@ -24,7 +26,7 @@ export default function ContactForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const secretPin = formData.pinParts.join("-");
-    const output = { ...formData };
+    const output = { ...formData, secretPin };
     console.log("Submitted Data:", output);
     alert("Form submitted! Check the console.");
   };
@@ -39,6 +41,7 @@ export default function ContactForm() {
       <TextInput
         label='First Name'
         name='firstName'
+        placeholder={"John"}
         value={formData.firstName}
         onChange={handleChange}
       />
@@ -46,6 +49,7 @@ export default function ContactForm() {
       <TextInput
         label='Last Name'
         name='lastName'
+        placeholder={"Doe"}
         value={formData.lastName}
         onChange={handleChange}
       />
@@ -60,7 +64,15 @@ export default function ContactForm() {
         label='Email'
         name='email'
         type='email'
+        placeholder={"JohnDoe@gmail.com"}
         value={formData.email}
+        onChange={handleChange}
+      />
+
+      <CurrencyInput
+        label='Cost Guess (USD)'
+        name='costGuess'
+        value={formData.costGuess}
         onChange={handleChange}
       />
 

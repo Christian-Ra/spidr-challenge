@@ -1,11 +1,10 @@
 export default function TextInput({
   label,
   name,
-  type = "text",
+  placeholder,
+  type,
   value,
   onChange,
-  required = true,
-  ...rest
 }) {
   return (
     <div style={{ marginBottom: "1rem" }}>
@@ -20,8 +19,9 @@ export default function TextInput({
         name={name}
         type={type}
         value={value}
+        placeholder={placeholder}
         onChange={onChange}
-        required={required}
+        required
         style={{
           padding: "0.5rem",
           width: "100%",
@@ -29,7 +29,6 @@ export default function TextInput({
           border: "1px solid #ccc",
           borderRadius: "4px",
         }}
-        {...rest}
       />
     </div>
   );
