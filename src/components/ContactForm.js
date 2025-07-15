@@ -34,9 +34,24 @@ export default function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      style={{ padding: "1rem", maxWidth: "500px", margin: "auto" }}
+      style={{
+        padding: "2rem",
+        backgroundColor: "#57A5B5",
+        color: "#fff", // white text
+        width: "800px",
+        margin: "auto",
+        boxShadow: "0 0 10px rgba(0,0,0,0.5)",
+      }}
     >
-      <h2>Contact Form</h2>
+      <h1
+        style={{
+          paddingBottom: "2rem",
+          textAlign: "center",
+          fontWeight: "normal",
+        }}
+      >
+        Be the first in line for Spidr's new air fryr!
+      </h1>
 
       <TextInput
         label='First Name'
@@ -80,7 +95,27 @@ export default function ContactForm() {
 
       <button
         type='submit'
-        style={{ marginTop: "1rem", padding: "0.5rem 1rem" }}
+        style={{
+          display: "block",
+          margin: "2rem auto 0", // center the button
+          padding: "0.75rem 2rem",
+          backgroundColor: "transparent",
+          color: "#fff",
+          border: "2px solid #fff",
+          fontSize: "1rem",
+          cursor: "pointer",
+          transition: "all 0.3s ease-in-out",
+        }}
+        onMouseOver={(e) => {
+          e.target.style.borderColor = "#3E7D8A";
+          e.target.style.backgroundColor = "#1D3C43";
+          e.target.style.color = "#3E7D8A";
+        }}
+        onMouseOut={(e) => {
+          e.target.style.borderColor = "#fff";
+          e.target.style.backgroundColor = "transparent";
+          e.target.style.color = "#fff";
+        }}
       >
         Submit
       </button>

@@ -30,13 +30,12 @@ export default function CurrencyInput({ label, name, value, onChange }) {
         }}
         required
         style={{
-          backgroundColor: "#003f3f",
+          //   backgroundColor: "#25292C",
           color: "#fff",
           padding: "0.5rem",
           width: "100%",
           fontSize: "1rem",
           border: "1px solid #ccc",
-          borderRadius: "4px",
         }}
       />
     </div>

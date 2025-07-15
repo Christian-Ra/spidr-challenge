@@ -23,7 +23,14 @@ export default function Home() {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <div className={`${styles.page}`}>
+      <div
+        className={`${styles.page}`}
+        style={{
+          backgroundColor: "#25292C",
+          minHeight: "100vh",
+          padding: "2rem",
+        }}
+      >
         <ContactForm />
       </div>
     </>

@@ -26,8 +26,9 @@ export default function TextInput({
           padding: "0.5rem",
           width: "100%",
           fontSize: "1rem",
+          color: "#fff",
+          backgroundColor: "fff",
           border: "1px solid #ccc",
-          borderRadius: "4px",
         }}
       />
     </div>

@@ -16,7 +16,14 @@ export default function PINInputGroup({ pinParts, setPinParts }) {
   };
 
   return (
-    <div style={{ display: "flex", gap: "0.5rem", margin: "0.5rem 0" }}>
+    <div
+      style={{
+        display: "flex",
+        gap: "0.5rem",
+        margin: "0.5rem 0",
+        verticalAlign: "center",
+      }}
+    >
       <label style={{ marginBottom: "0.25rem" }}>Super Secret Spidr PIN:</label>
       {pinParts.map((part, i) => (
         <input

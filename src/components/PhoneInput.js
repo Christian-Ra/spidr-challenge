@@ -42,7 +42,6 @@ export default function PhoneInput({ label, name, value, onChange }) {
           width: "100%",
           fontSize: "1rem",
           border: "1px solid #ccc",
-          borderRadius: "4px",
         }}
       />
     </div>
